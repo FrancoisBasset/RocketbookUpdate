@@ -1,0 +1,32 @@
+{
+  "name": "rocketbookupdate",
+  "version": "1.0.0",
+  "description": "Progressive Web App for Rocketbook app updates",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "nexe": "nexe rocketbookWindowsNotification.js -t x64-12.16.2 -o RocketbookWindowsNotification.exe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrancoisBasset/RocketbookUpdate.git"
+  },
+  "keywords": [
+    "rocketbook",
+    "update",
+    "pwa"
+  ],
+  "author": "FrancoisBasset",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrancoisBasset/RocketbookUpdate/issues"
+  },
+  "homepage": "https://github.com/FrancoisBasset/RocketbookUpdate#readme",
+  "devDependencies": {
+    "@types/node": "^14.11.2"
+  },
+  "dependencies": {
+    "jsdom": "^16.4.0",
+    "node-notifier": "^8.0.0"
+  }
+}
