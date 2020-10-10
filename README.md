@@ -1,4 +1,5 @@
 # rocketbookupdate
+Progressive Web App for Rocketbook app updates
 
 ## Project setup
 ```
