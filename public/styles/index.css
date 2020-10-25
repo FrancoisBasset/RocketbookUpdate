@@ -1,0 +1,44 @@
+* {
+	text-align: center;
+	user-select: none;
+	overscroll-behavior-y: contain;
+}
+
+p, label {
+	color: white;
+	font-family: 'Courier New';
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#logo {
+	width: 40px;
+}
+
+#shortcutLink {
+	outline: none;
+}
+
+#shortcutImage {
+	width: 200px;
+	background-color: grey;
+	border-radius: 20px;
+	padding: 15px;
+}
+
+#currentVersionDiv {
+	margin-top: 10%;
+}
+
+#newVersionDiv {
+	margin-top: 10%;
+	display: none;
+}
+
+#playstoreImage {
+	width: 200px;
+	position: fixed;
+	bottom: 0px;
+	left: 50%;
+	transform: translate(-50%, 0);
+}

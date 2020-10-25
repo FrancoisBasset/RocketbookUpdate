@@ -1,0 +1,21 @@
+{
+	"name": "Rocketbook Update",
+	"short_name": "Rocketbook Update",
+	"description": "Progressive Web App for Rocketbook app updates",
+
+	"start_url": "/",
+	"scope": "/",
+	
+	"display": "fullscreen",
+	"orientation": "portrait",
+	
+	"theme_color": "#95d358",
+	"background_color": "white",
+	"icons": [
+		{
+			"src": "/images/icon_192x192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		}
+	]
+}
