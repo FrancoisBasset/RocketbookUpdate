@@ -16,7 +16,7 @@ p, label {
 }
 
 #shortcutLink {
-	outline: none;
+	-webkit-tap-highlight-color: transparent;
 }
 
 #shortcutImage {
