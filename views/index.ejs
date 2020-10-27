@@ -57,6 +57,20 @@
 	if (lastVersion > currentVersion) {
 		document.getElementById('newVersionDiv').style.display = 'block';
 		document.getElementById('newVersion').textContent = lastVersion;
+
+		/*navigator.serviceWorker.getRegistration().then(function(reg) {
+			reg.showNotification('Rocketbook Update', {
+				icon: '/images/logo.png',
+				actions: [
+					{
+						action: 'explore',
+						title: 'explore'
+					}
+				],
+				body: `Nouvelle version disponible : ${lastVersion}`,
+				
+			});
+		});*/
 	}
 
 	navigator.serviceWorker.register('/sw.js').then(function() {
