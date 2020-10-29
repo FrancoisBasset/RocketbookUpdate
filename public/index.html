@@ -20,11 +20,11 @@
 	</div>
 
 	<div id="currentVersionDiv">
-		<label>Version actuelle : <span id="currentVersion"></span></label>
+		<label id="currentVersion"></label>
 	</div>
 
 	<div id="newVersionDiv">
-		<label>Nouvelle version : <span id="newVersion"></span> !</label>
+		<label id="newVersion"></label>
 	</div>
 
 	<a href='https://play.google.com/store/apps/details?id=com.rb.rocketbook&hl=fr&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
@@ -56,11 +56,11 @@
 
 			localStorage.setItem('currentVersion', lastVersion);
 
-			document.getElementById('currentVersion').textContent = currentVersion;
+			document.getElementById('currentVersion').textContent = `Version actuelle : ${currentVersion}`;
 
 			if (lastVersion > currentVersion) {
 				document.getElementById('newVersionDiv').style.display = 'block';
-				document.getElementById('newVersion').textContent = lastVersion;
+				document.getElementById('newVersion').textContent = `Nouvelle version : ${lastVersion} !`;
 			}
 		})
 	});
