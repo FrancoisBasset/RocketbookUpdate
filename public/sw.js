@@ -1,4 +1,4 @@
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function() {
 	caches.open('cache').then(function(cache) {
 		return cache.addAll([
 			'/index.html',

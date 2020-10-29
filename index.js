@@ -10,15 +10,13 @@ app.listen(process.env.PORT || 80, function() {
 });
 
 app.get('/', function(req, res) {
-	getLastVersion().then(function(lastVersion) {
-		res.render('./index.ejs', {
-			lastVersion: lastVersion
-		});
-	});
+	res.render('./index.html');
 });
 
-function getLastVersion() {
-	return jsdom.fromURL('https://play.google.com/store/apps/details?id=com.rb.rocketbook&hl=fr').then(dom => {
-		return dom.window.document.getElementsByClassName('IxB2fe')[0].children[3].children[1].textContent;
+app.get('/lastversion', async function(req, res) {
+	const dom = await jsdom.fromURL('https://play.google.com/store/apps/details?id=com.rb.rocketbook&hl=fr');
+	
+	res.json({
+		lastVersion: dom.window.document.getElementsByClassName('IxB2fe')[0].children[3].children[1].textContent
 	});
-}
+});

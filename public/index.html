@@ -34,44 +34,36 @@
 
 </html>
 
+<script src="functions.js"></script>
 <script>
-	const mode = navigator.appVersion.includes('Android') ? 'mobile' : 'web';
-	document.body.style.background = `url('/images/background_${mode}.png') no-repeat center fixed`;
+	document.body.style.background = `url('/images/background_${getDeviceMode()}.png') no-repeat center fixed`;
 	document.body.style.backgroundSize = 'cover';
 
-	if (mode == 'web') {
+	if (getDeviceMode() == 'web') {
 		document.getElementById('shortcutDiv').style.display = 'none';
 	}
 
 	var currentVersion = localStorage.getItem('currentVersion');
-	const lastVersion = '<%= lastVersion %>';
+	var lastVersion;
 
-	if (currentVersion == null) {
-		currentVersion = lastVersion;
-	}
+	fetch('/lastversion').then(function(response) {
+		response.json().then(function(json) {
+			lastVersion = json.lastVersion;
 
-	localStorage.setItem('currentVersion', lastVersion);
+			if (currentVersion == null) {
+				currentVersion = lastVersion;
+			}
 
-	document.getElementById('currentVersion').textContent = currentVersion;
+			localStorage.setItem('currentVersion', lastVersion);
 
-	if (lastVersion > currentVersion) {
-		document.getElementById('newVersionDiv').style.display = 'block';
-		document.getElementById('newVersion').textContent = lastVersion;
+			document.getElementById('currentVersion').textContent = currentVersion;
 
-		/*navigator.serviceWorker.getRegistration().then(function(reg) {
-			reg.showNotification('Rocketbook Update', {
-				icon: '/images/logo.png',
-				actions: [
-					{
-						action: 'explore',
-						title: 'explore'
-					}
-				],
-				body: `Nouvelle version disponible : ${lastVersion}`,
-				
-			});
-		});*/
-	}
+			if (lastVersion > currentVersion) {
+				document.getElementById('newVersionDiv').style.display = 'block';
+				document.getElementById('newVersion').textContent = lastVersion;
+			}
+		})
+	});
 
 	navigator.serviceWorker.register('/sw.js').then(function() {
 		console.log("Service Worker Registered");
