@@ -44,23 +44,20 @@
 	}
 
 	var currentVersion = localStorage.getItem('currentVersion');
-	var lastVersion;
 
 	fetch('/lastversion').then(function(response) {
 		response.json().then(function(json) {
-			lastVersion = json.lastVersion;
-
 			if (currentVersion == null) {
-				currentVersion = lastVersion;
+				currentVersion = json.lastVersion;
 			}
 
-			localStorage.setItem('currentVersion', lastVersion);
+			localStorage.setItem('currentVersion', json.lastVersion);
 
 			document.getElementById('currentVersion').textContent = `Version actuelle : ${currentVersion}`;
 
-			if (lastVersion > currentVersion) {
+			if (json.lastVersion > currentVersion) {
 				document.getElementById('newVersionDiv').style.display = 'block';
-				document.getElementById('newVersion').textContent = `Nouvelle version : ${lastVersion} !`;
+				document.getElementById('newVersion').textContent = `Nouvelle version : ${json.lastVersion} !`;
 			}
 		})
 	});
