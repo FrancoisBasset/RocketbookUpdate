@@ -45,7 +45,7 @@
 
 	var currentVersion = localStorage.getItem('currentVersion');
 
-	fetch('/lastversion').then(function(response) {
+	fetch('/rocketbookupdate/lastversion').then(function(response) {
 		response.json().then(function(json) {
 			if (currentVersion == null) {
 				currentVersion = json.lastVersion;

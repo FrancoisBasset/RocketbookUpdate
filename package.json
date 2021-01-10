@@ -1,5 +1,6 @@
 {
 	"name": "rocketbookupdate",
+	"title": "Rocketbook Update",
 	"version": "1.0.0",
 	"description": "Progressive Web App for Rocketbook app updates",
 	"main": "index.js",
