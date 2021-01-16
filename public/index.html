@@ -3,19 +3,19 @@
 
 <head>
 	<title>Rocketbook Update</title>
-	<link rel="manifest" href="/Manifest.json" /> 
+	<link rel="manifest" href="Manifest.json" /> 
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="/styles/index.css" />
+	<link rel="stylesheet" href="styles/index.css" />
 </head>
 
 <body>
-	<img id="logo" src="/images/logo.png" />
+	<img id="logo" src="images/logo.png" />
 	
 	<div id="shortcutDiv">
 		<p id="openAppLabel">Ouvrir l'application</p>
 		
 		<a id="shortcutLink" href="https://rocketbook.app.link">
-			<img id="shortcutImage" src="/images/shortcut.png">
+			<img id="shortcutImage" src="images/shortcut.png">
 		</a>
 	</div>
 
@@ -36,7 +36,7 @@
 
 <script src="functions.js"></script>
 <script>
-	document.body.style.background = `url('/images/background_${getDeviceMode()}.png') no-repeat center fixed`;
+	document.body.style.background = `url('images/background_${getDeviceMode()}.png') no-repeat center fixed`;
 	document.body.style.backgroundSize = 'cover';
 
 	if (getDeviceMode() == 'web') {
@@ -62,7 +62,7 @@
 		})
 	});
 
-	navigator.serviceWorker.register('/sw.js').then(function() {
+	navigator.serviceWorker.register('sw.js').then(function() {
 		console.log("Service Worker Registered");
 	});
 </script>
