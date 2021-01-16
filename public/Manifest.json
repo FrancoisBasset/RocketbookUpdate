@@ -4,13 +4,13 @@
 	"description": "Progressive Web App for Rocketbook app updates",
 
 	"start_url": "/",
-	"scope": "/",
-	
-	"display": "fullscreen",
-	"orientation": "portrait",
-	
+
 	"theme_color": "#95d358",
 	"background_color": "white",
+	
+	"orientation": "portrait",
+	"display": "fullscreen",
+	
 	"icons": [
 		{
 			"src": "/images/icon_192x192.png",
