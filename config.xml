@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="francoisbasset.rocketbookupdate" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Rocketbook Update</name>
+    <description>Rocketbook Update</description>
+    <author href="https://github.com/FrancoisBasset">François Basset</author>
+    <content src="/" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+	<preference name="DisallowOverscroll" value="true" />
+	<preference name="FullScreen" value="true" />
+	<icon src="www/assets/icon.png" platform="android" width="100" height="100" density="hdpi" />
+</widget>

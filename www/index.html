@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<title>Rocketbook Update</title>
-	<link rel="manifest" href="/Manifest.json" /> 
+	<link rel="icon" href="/assets/icon.png">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="/styles/index.css" />
+	<link rel="stylesheet" href="/assets/index.css" />
 </head>
 
 <body>
-	<img id="logo" src="/images/logo.png" />
+	<img id="logo" src="/assets/icon.png" alt="Logo" />
 	
 	<div id="shortcutDiv">
 		<p id="openAppLabel">Ouvrir l'application</p>
 		
 		<a id="shortcutLink" href="https://rocketbook.app.link">
-			<img id="shortcutImage" src="/images/shortcut.png">
+			<img id="shortcutImage" src="/assets/shortcut.png" alt="Shortcut" />
 		</a>
 	</div>
 
@@ -36,7 +36,7 @@
 
 <script src="functions.js"></script>
 <script>
-	document.body.style.background = `url('/images/background_${getDeviceMode()}.png') no-repeat center fixed`;
+	document.body.style.background = `url('/assets/background_${getDeviceMode()}.png') no-repeat center fixed`;
 	document.body.style.backgroundSize = 'cover';
 
 	if (getDeviceMode() == 'web') {
@@ -60,9 +60,5 @@
 				document.getElementById('newVersion').textContent = `Nouvelle version : ${json.lastVersion} !`;
 			}
 		})
-	});
-
-	navigator.serviceWorker.register('/sw.js').then(function() {
-		console.log("Service Worker Registered");
 	});
 </script>

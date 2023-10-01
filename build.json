@@ -1,0 +1,11 @@
+{
+    "android": {
+        "release": {
+            "keystore": "./keystore",
+            "storePassword": "rocketbookupdate",
+            "alias": "key",
+            "password" : "rocketbookupdate",
+            "keystoreType": "jks"
+        }
+    }
+}

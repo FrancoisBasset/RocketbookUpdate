@@ -5,8 +5,12 @@
 	"description": "Progressive Web App for Rocketbook app updates",
 	"main": "index.js",
 	"scripts": {
+		"postinstall": "cordova platform add android",
 		"dev": "nodemon ./index.js",
-		"start": "node ./index.js"
+		"lint": "eslint . --fix",
+		"clean": "rm -rf keystore node_modules package-lock.json platforms",
+		"genkey": "keytool -genkey -keystore keystore -alias key -keyalg RSA",
+		"buildapk": "cordova build android --release -- --buildConfig --packageType=apk"
 	},
 	"repository": {
 		"type": "git",
@@ -18,13 +22,22 @@
 		"pwa"
 	],
 	"author": "FrancoisBasset",
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/FrancoisBasset/RocketbookUpdate/issues"
 	},
 	"homepage": "https://github.com/FrancoisBasset/RocketbookUpdate#readme",
 	"dependencies": {
-		"express": "^4.17.1",
-		"jsdom": "^16.4.0"
+		"express": "^4.18.2"
+	},
+	"cordova": {
+		"platforms": [
+			"android"
+		]
+	},
+	"devDependencies": {
+		"cordova-android": "^10.1.2",
+		"eslint": "^8.50.0",
+		"nodemon": "^3.0.1"
 	}
 }
