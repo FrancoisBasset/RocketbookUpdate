@@ -34,6 +34,7 @@
 
 </html>
 
+<script src="constants.js"></script>
 <script src="functions.js"></script>
 <script>
 	document.body.style.background = `url('/assets/background_${getDeviceMode()}.png') no-repeat center fixed`;
@@ -45,7 +46,7 @@
 
 	var currentVersion = localStorage.getItem('currentVersion');
 
-	fetch('/lastversion').then(function(response) {
+	fetch(API_URL + 'lastversion').then(function(response) {
 		response.json().then(function(json) {
 			if (currentVersion == null) {
 				currentVersion = json.lastVersion;
