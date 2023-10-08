@@ -1,7 +1,9 @@
+const cors = require('cors');
 const express = require('express');
 const app = express();
 
 app.use(express.static('./www'));
+app.use(cors());
 
 app.listen(3000, function() {
 	console.log('Start on 3000');

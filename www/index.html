@@ -27,7 +27,7 @@
 		<label id="newVersion"></label>
 	</div>
 
-	<a href='https://play.google.com/store/apps/details?id=com.rb.rocketbook&hl=fr&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+	<a href='https://play.google.com/store/apps/details?id=com.rb.rocketbook&hl=fr&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' onclick="updateVersion()">
 		<img id="playstoreImage" alt='Disponible sur Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png'/>
 	</a>
 </body>
@@ -44,15 +44,17 @@
 		document.getElementById('shortcutDiv').style.display = 'none';
 	}
 
-	var currentVersion = localStorage.getItem('currentVersion');
+	let currentVersion = localStorage.getItem('currentVersion');
+	let lastVersion = null;
 
 	fetch(API_URL + 'lastversion').then(function(response) {
 		response.json().then(function(json) {
 			if (currentVersion == null) {
 				currentVersion = json.lastVersion;
+				localStorage.setItem('currentVersion', currentVersion);
 			}
 
-			localStorage.setItem('currentVersion', json.lastVersion);
+			lastVersion = json.lastVersion;
 
 			document.getElementById('currentVersion').textContent = `Version actuelle : ${currentVersion}`;
 
@@ -62,4 +64,8 @@
 			}
 		})
 	});
+
+	function updateVersion() {
+		localStorage.setItem('currentVersion', lastVersion);
+	}
 </script>

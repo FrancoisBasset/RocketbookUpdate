@@ -28,6 +28,7 @@
 	},
 	"homepage": "https://github.com/FrancoisBasset/RocketbookUpdate#readme",
 	"dependencies": {
+		"cors": "^2.8.5",
 		"express": "^4.18.2",
 		"ramda": "^0.29.0"
 	},
