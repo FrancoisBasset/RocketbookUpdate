@@ -8,7 +8,7 @@
 		"postinstall": "cordova platform add android",
 		"dev": "nodemon ./index.js",
 		"lint": "eslint . --fix",
-		"clean": "rm -rf keystore node_modules package-lock.json platforms",
+		"clean": "rm -rf keystore node_modules platforms",
 		"genkey": "keytool -genkey -keystore keystore -alias key -keyalg RSA",
 		"buildapk": "cordova build android --release -- --buildConfig --packageType=apk"
 	},
@@ -28,6 +28,7 @@
 	},
 	"homepage": "https://github.com/FrancoisBasset/RocketbookUpdate#readme",
 	"dependencies": {
+		"cordova": "^12.0.0",
 		"cors": "^2.8.5",
 		"express": "^4.18.2",
 		"ramda": "^0.29.0"
@@ -38,6 +39,7 @@
 		]
 	},
 	"devDependencies": {
+		"@flydotio/dockerfile": "^0.4.10",
 		"cordova-android": "^10.1.2",
 		"eslint": "^8.50.0",
 		"nodemon": "^3.0.1"
