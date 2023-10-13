@@ -8,7 +8,7 @@
 		"postinstall": "cordova platform add android",
 		"dev": "nodemon ./index.js",
 		"lint": "eslint . --fix",
-		"clean": "rm -rf keystore node_modules platforms",
+		"clean": "rm -rf keystore node_modules package-lock.json platforms",
 		"genkey": "keytool -genkey -keystore keystore -alias key -keyalg RSA",
 		"buildapk": "cordova build android --release -- --buildConfig --packageType=apk"
 	},
